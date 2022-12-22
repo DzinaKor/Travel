@@ -1,0 +1,18 @@
+@mixin size($prop, $startSize, $minSize) {
+    $curWidth: 1920;
+    $pastWidth: 320;
+
+    #{$prop}: calc(#{$minSize + px} + #{$startSize - $minSize} * ((100vw - #{$pastWidth + px}) / #{$curWidth - $pastWidth}));
+
+}
+
+@function size_px($startSize, $minSize) {
+    $curWidth: 1920;
+    $pastWidth: 320;
+
+    @return calc(#{$minSize + px} + #{$startSize - $minSize} * ((100vw - #{$pastWidth + px}) / #{$curWidth - $pastWidth}));
+}
+
+@media all and (max-width: 1921px) {
+
+}
